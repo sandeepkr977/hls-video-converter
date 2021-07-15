@@ -1,0 +1,16 @@
+
+sudo rabbitmqctl list_users
+
+sudo rabbitmqctl delete_user guest
+
+sudo rabbitmqctl add_user stream_app 
+// StreamApp123
+
+sudo rabbitmqctl set_user_tags stream_app administrator
+
+sudo rabbitmqctl add_vhost stream
+
+sudo rabbitmqctl set_permissions -p stream stream_app ".*" ".*" ".*"
+
+
+rabbitmq-plugins enable rabbitmq_management
